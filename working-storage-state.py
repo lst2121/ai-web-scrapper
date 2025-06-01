@@ -8,8 +8,8 @@ import asyncio
 load_dotenv()
 
 # llm = ChatOpenAI(model="gpt-3.5-turbo")
-
-llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash')
+llm = ChatOpenAI(model="gpt-4o-mini")
+# llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash')
 
 task_prompt = """
 Go to LinkedIn and search for 'QA Automation Engineer' jobs with 'Remote' option.

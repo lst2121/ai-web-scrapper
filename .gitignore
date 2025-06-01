@@ -140,6 +140,9 @@ venv.bak/
 .env
 auth.json
 
+# Logs
+logs/
+
 # Spyder project settings
 .spyderproject
 .spyproject

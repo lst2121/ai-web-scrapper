@@ -4,13 +4,18 @@ from browser_use import Agent
 from browser_use.browser import BrowserProfile, BrowserSession
 from dotenv import load_dotenv
 import asyncio
-
+import os
 load_dotenv()
 
 # llm = ChatOpenAI(model="gpt-3.5-turbo")
 
-llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash')
+# llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash')
+# llm = ChatOpenAI(model="gpt-4o-mini")
 
+llm = ChatOpenAI(model="deepseek/deepseek-chat-v3-0324:free",
+                 base_url=os.getenv("OPEN_ROUTER_ENDPOINT"),
+                 api_key=os.getenv("OPEN_ROUTER_API_KEY")
+                 )
 task_prompt = """
 You are automating LinkedIn Easy Apply for QA Automation Engineer jobs in Noida, India.
 
