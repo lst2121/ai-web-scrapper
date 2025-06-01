@@ -10,7 +10,7 @@ llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash')
 
 # Domain-specific sensitive data
 sensitive_data = {
-    'https://www.linkedin.com/': {'x_email': 'lokender2121@gmail.com', 'x_pass': 'Deepak@21'}
+    'https://www.linkedin.com/': {'x_email': 'lokender2121@gmail.com', 'x_pass': '****'}
 }
 
 chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"

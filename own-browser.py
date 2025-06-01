@@ -21,7 +21,7 @@ async def main():
     )
 
     agent = Agent(
-        task="Go to LinkedIn and login with email:lokender2121@gmail.com, password:Deepak@21 then check my account information",
+        task="Go to LinkedIn and login with email:lokender2121@gmail.com, password:***** then check my account information",
         llm=llm,
         use_vision=False,
         save_conversation_path="logs/conversation",

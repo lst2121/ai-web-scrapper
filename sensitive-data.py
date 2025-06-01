@@ -10,7 +10,7 @@ llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash')
 
 # Domain-specific sensitive data
 sensitive_data = {
-    'x_email': 'lokender2121@gmail.com', 'x_pass': 'Deepak@21'
+    'x_email': 'lokender2121@gmail.com', 'x_pass': '*****'
 }
 
 # # Set browser session with allowed domains that match all domain patterns in sensitive_data
