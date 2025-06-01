@@ -1,0 +1,40 @@
+from dotenv import load_dotenv
+load_dotenv()
+
+from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
+from browser_use import Agent, BrowserSession
+import asyncio
+
+llm = ChatGoogleGenerativeAI(model='gemini-2.0-flash')
+
+# Domain-specific sensitive data
+sensitive_data = {
+    'https://www.linkedin.com/': {'x_email': 'lokender2121@gmail.com', 'x_pass': 'Deepak@21'}
+}
+
+chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
+# # Set browser session with allowed domains that match all domain patterns in sensitive_data
+browser_session = BrowserSession(
+    storage_state='./auth.json',
+    executable_path=chrome_path,
+        headless=False,
+    allowed_domains=[
+    '*.linkedin.com',
+],
+)
+
+# Pass the sensitive data to the agent
+agent = Agent(
+    task="Go to LinkedIn and login with x_email, x_password then check my account information",
+    llm=llm,
+    sensitive_data=sensitive_data,
+    browser_session=browser_session,
+    use_vision=False,
+)
+
+async def main():
+    await agent.run()
+
+if __name__ == '__main__':
+    asyncio.run(main())
