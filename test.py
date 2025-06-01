@@ -15,11 +15,12 @@ browser_session = BrowserSession(
     executable_path='C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
     user_data_dir='C:\\Users\\lokender.singh\\AppData\\Local\\browseruse\\profiles\\default',  # your dedicated profile folder
     headless=False,
+    ignore_https_errors=True,
 )
 
 async def main():
     agent = Agent(
-        task="Go to LinkedIn and grab 5 most recent jobs in India",
+        task="Go to https://pharma2.ipstest05.evaluategroup.local/ux/WebReport/Welcome2.aspx and Login and give me account information",
         llm=llm,
         browser_session=browser_session,
         use_vision=False,
